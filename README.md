@@ -1,6 +1,6 @@
 # blog
 
-> A Vue.js project
+> Shawnan's blog
 
 ## Build Setup
 
