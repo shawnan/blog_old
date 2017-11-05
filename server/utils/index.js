@@ -4,7 +4,7 @@
 "use strict"
 const Logger = require('mini-logger');
 const validator = require('validator');
-const config = require('../config/index.js');
+const config = require('../../config/index.js');
 const print = require('debug')('kov-blog');
 const utils = {};
 module.exports = utils;

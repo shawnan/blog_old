@@ -1,21 +1,27 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
+import Vuex from 'vuex'
+import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm'
 import FastClick from 'fastclick'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 import App from './App'
 import AdminRoutes from './router/admin'
-import Root from './components/Root'
-import Admin from './components/Admin'
+import Root from './pages/Root'
+import Admin from './pages/Admin'
 
 // import URL from './libs/static'
 // import Common from './libs/common'
-// import Vuex from 'vuex'
+
+
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'bootstrap/dist/css/bootstrap.css'
 
 Vue.config.productionTip = false
 
-// Vue.use(Vuex)
+Vue.use(BootstrapVue)
+Vue.use(Vuex)
 Vue.use(VueRouter)
 Vue.use(VueResource)
 
@@ -24,7 +30,7 @@ Vue.use(VueResource)
 // });
 
 const router = new VueRouter({
-    mode: 'history',
+    mode: 'hash',
     routes: [{
         path: '/',
         name: 'Root',
@@ -37,12 +43,16 @@ const router = new VueRouter({
     }]
 })
 
-// const store = new Vuex.Store({
-//     state: {
-//     },
-//     mutations: {
-//     }
-// })
+const store = new Vuex.Store({
+  state: {
+    menuopen: false
+  },
+  mutations: {
+    updateMenuStatus (state, menuopen) {
+      state.menuopen = menuopen;
+    }
+  }
+})
 
 
 // router.beforeEach((to, from, next) => {
@@ -267,6 +277,7 @@ const router = new VueRouter({
 new Vue({
     el: '#app',
     router,
+    store,
     template: '<App/>',
     components: { App }
 })

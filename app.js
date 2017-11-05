@@ -2,7 +2,9 @@ const serve = require('koa-static');
 const Koa = require('koa');
 const views = require('koa-views');
 const bodyParser = require('koa-bodyparser');
-const controller = require('./controller');
+const historyApiFallback = require('koa-connect-history-api-fallback');
+const controller = require('./server/controller');
+
 
 const app = new Koa();
 
@@ -13,6 +15,9 @@ app.use(async (ctx, next) => {
 });
 
 app.use(bodyParser());
+
+// spa 
+app.use(historyApiFallback());
 
 // static
 app.use(serve(__dirname + '/views'));

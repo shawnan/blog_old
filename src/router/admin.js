@@ -1,7 +1,7 @@
 import URL from '../libs/static'
-import AdminRoot from '../components/AdminRoot'
-import Post from '../components/Post'
-import PostNew from '../components/PostNew'
+import AdminRoot from '../pages/AdminRoot'
+import Post from '../pages/Post'
+import PostNew from '../pages/PostNew'
 
 const routers = [
     {

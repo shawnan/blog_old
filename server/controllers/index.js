@@ -1,5 +1,5 @@
 module.exports = {
-    'GET /': async (ctx, next) => {
+    'GET /index': async (ctx, next) => {
         await ctx.render('index.html');
     }
 };
