@@ -7,9 +7,12 @@ import FastClick from 'fastclick'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 import App from './App'
+import Index from './pages/home/Index'
+import IndexRoutes from './router/home'
+import Archives from './pages/archives/Archives'
+import ArchivesRoutes from './router/archives'
 import AdminRoutes from './router/admin'
-import Root from './pages/Root'
-import Admin from './pages/Admin'
+import Admin from './pages/admin/Admin'
 
 // import URL from './libs/static'
 // import Common from './libs/common'
@@ -33,8 +36,14 @@ const router = new VueRouter({
     mode: 'hash',
     routes: [{
         path: '/',
-        name: 'Root',
-        component: Root
+        name: 'Index',
+        component: Index,
+        children: IndexRoutes
+    }, {
+        path: '/archives',
+        name: 'Archives',
+        component: Archives,
+        children: ArchivesRoutes
     }, {
         path: '/Admin',
         name: 'Admin',

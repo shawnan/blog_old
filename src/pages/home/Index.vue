@@ -3,17 +3,17 @@
       <snav></snav>
       <sheader></sheader>
       <div class="main">
-        <post-list-item></post-list-item>
+        <router-view></router-view>
       </div>
       <sfooter></sfooter>
   </div>
 </template>
 <script>
 import { mapState } from 'vuex'
-import snav from '../components/SNav'
-import sheader from '../components/SHeader'
-import postListItem from '../components/PostListItem'
-import sfooter from '../components/SFooter'
+import snav from '../../components/SNav'
+import sheader from '../../components/SHeader'
+import postListItem from '../../components/PostListItem'
+import sfooter from '../../components/SFooter'
 export default {
   name: 'root',
   components: {
@@ -48,3 +48,4 @@ export default {
   height: 100%;
 }
 </style>
+
