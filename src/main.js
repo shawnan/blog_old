@@ -45,7 +45,7 @@ const router = new VueRouter({
         component: Archives,
         children: ArchivesRoutes
     }, {
-        path: '/Admin',
+        path: '/admin',
         name: 'Admin',
         component: Admin,
         children: AdminRoutes

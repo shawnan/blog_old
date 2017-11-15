@@ -7,8 +7,8 @@
       </a>
       <nav id="J_NavMenu" class="animated drop navigation" v-bind:class="{'opened': menuopen, 'closed': !menuopen}" role="navigation">
         <ul class="navigation-list">
-          <li v-for="item in list" class="navigation-item" v-bind:class="{'navigation-': item.subviewopen}" @click="onItemClick(item, $event)" data-nav="true">
-            <a :href="item.href" data-nav="true">{{ item.title }}</a>
+          <li v-for="item in list" class="navigation-item" v-bind:class="{'navigation-': item.subviewopen}" data-nav="true">
+            <router-link :to="item.href">{{ item.title }}</router-link>
           </li>
         </ul><!-- /.dl-menu -->
       </nav><!-- /.dl-menuwrapper -->
@@ -24,20 +24,19 @@ export default {
     return {
       list: [{
         title: 'Home',
-        href: ''
+        href: '/'
       }, {
         title: 'Posts',
-        href: '/'
-        
+        href: '/archives/posts'
       },  {
         title: 'Tags',
-        href: '/'
+        href: '/archives/tags'
       }, {
         title: 'Search',
-        href: ''
+        href: '/'
       }, {
         title: 'About',
-        href: ''
+        href: '/about'
       }]
     }
   },

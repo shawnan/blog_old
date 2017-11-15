@@ -1,7 +1,10 @@
 <template>
-<div id="archives" class="root" :class="{feature: isHomePage}" @click="onDivClick($event)">
+<div id="archives" class="archives" :class="{feature: isHomePage}" @click="onDivClick($event)">
     <snav></snav>
-    <sheader></sheader>
+    <sheader
+      :isHomePage="isHomePage"
+      :subTitle="subTitle"
+    ></sheader>
     <div class="main">
       <router-view></router-view>
     </div>
@@ -16,7 +19,7 @@ import sheader from '../../components/SHeader'
 import postListItem from '../../components/PostListItem'
 import sfooter from '../../components/SFooter'
 export default {
-  name: 'root',
+  name: 'archives',
   components: {
     snav,
     sheader,
@@ -24,12 +27,15 @@ export default {
     sfooter
   },
   data () {
-      return {
-          msg: 'Root',
-          isHomePage: true
-      }
+    return {
+      isHomePage: false,
+      subTitle: ''
+    }
   },
   created () {
+    console.log(this.$route)
+    var str = 'all ' + this.$route.name;
+    this.subTitle = str.toUpperCase();
   },
   computed: mapState([
     'menuopen'
@@ -43,5 +49,21 @@ export default {
 </script>
 
 <style>
-	
+.main {
+  margin: 40px 2px 20px 2px;
+}
+@media only screen and (min-width: 48em) {
+  .main {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+@media only screen and (min-width: 62.5em) {
+  .main {
+    max-width: 800px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 </style>

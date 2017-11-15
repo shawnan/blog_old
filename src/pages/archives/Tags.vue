@@ -1,18 +1,27 @@
 <template>
-    <div id="post">
-        <div class="hello">
-            <h1>{{ msg }}</h1>
-        </div>
-    </div>
+  <div id="tags">
+    <archives-item v-for="item in list"
+      :key="item.id"
+      :year="item.year"
+      :postList="item.postList"
+    ></archives-item>
+  </div>
 </template>
 <script>
+import ArchivesItem from '../../components/ArchivesItem'
+
 export default {
-    name: 'hello',
-    data () {
-        return {
-            msg: 'post'
-        }
+  name: 'hello',
+  components: {
+    'archives-item': ArchivesItem
+  },
+  created () {
+  },
+  data () {
+    return {
+      list: []
     }
+  }
 }
 </script>
 

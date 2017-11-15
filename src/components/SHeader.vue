@@ -1,10 +1,10 @@
 <template>
   <div id="J_Header" class="header">
-    <div class="image-credit">Image source: <a href="http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/">dargadgetz</a></div><!-- /.image-credit -->
-    <div class="header-image">
-      <img class="img-responsive" src="http://www.shawnan.net/wp-content/themes/underTheSky/images/abstract-5.jpg" :alt="title">
+    <div class="image-credit" v-show="isHomePage">Image source: <a href="http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/">dargadgetz</a></div><!-- /.image-credit -->
+    <div class="header-image" v-show="isHomePage">
+      <img class="img-responsive" :src="src" :alt="title">
     </div><!-- /.entry-image -->
-    <div class="header-title">
+    <div class="header-title" :class="{'header-title-archives': !isHomePage}">
       <div class="header-title-wrap">
         <h1>{{ title }}</h1>
         <h2>{{ subTitle }}</h2>
@@ -19,11 +19,20 @@ export default {
   name: 'sheader',
   components: {
   },
+  props: {
+    isHomePage: {
+      type: Boolean,
+      default: true
+    },
+    subTitle: {
+      type: String,
+      default: 'Home'
+    }
+  },
   data () {
     return {
-      src: 'http://www.shawnan.net/wp-content/themes/underTheSky/images/abstract-5.jpg',
-      title: '天空之下',
-      subTitle: 'Home'
+      src: './static/images/abstract-5.jpg',
+      title: '天空之下'
     }
   },
   methods: {
@@ -114,6 +123,9 @@ export default {
 .header-title {
   text-align: center;
   margin: 30px 0 0;
+}
+.header-title-archives {
+  margin: 70px 0 0;
 }
 .feature .header-title .header-title-wrap {
   display: table-cell;
