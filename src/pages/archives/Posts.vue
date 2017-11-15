@@ -2,7 +2,7 @@
   <div id="post">
     <archives-item v-for="item in list"
       :key="item.id"
-      :year="item.year"
+      :title="item.title"
       :postList="item.postList"
     ></archives-item>
   </div>
@@ -19,7 +19,7 @@ export default {
     return {
       list: [{
         id: 1,
-        year: '2013',
+        title: '2013',
         postList: [
           {
             title: 'Post with a Background Image',
@@ -31,9 +31,8 @@ export default {
         ]
       }, {
         id: 2,
-        year: '2017',
-        postList: [
-          {
+        title: '2017',
+        postList: [{
             title: 'Post with a Background Image',
             href: 'http://shawnan.net'
           }, {

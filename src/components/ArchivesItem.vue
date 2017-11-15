@@ -1,7 +1,7 @@
 <template>
   <div>
     <article>
-      <h2 id="2013-ref">{{ year }}</h2>
+      <h2 :id="title">{{ title }}</h2>
       <ul>
         <li class="entry-title" v-for="item in postList">
           <a :href="item.href" title="Post with a Background Image">{{ item.title }}</a>
@@ -18,7 +18,11 @@ export default {
   components: {
   },
   props: {
-    year: {
+    itemId: {
+      type: String,
+      default: ''
+    },
+    title: {
       type: String,
       default: 2016
     },
