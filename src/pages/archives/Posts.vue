@@ -23,10 +23,10 @@ export default {
         postList: [
           {
             title: 'Post with a Background Image',
-            href: 'http://shawnan.net'
+            href: '#/post/123'
           }, {
             title: 'Post with a Background Image',
-            href: 'http://shawnan.net'
+            href: '#/post/124'
           }
         ]
       }, {
@@ -34,16 +34,16 @@ export default {
         title: '2017',
         postList: [{
             title: 'Post with a Background Image',
-            href: 'http://shawnan.net'
+            href: '#/post/123'
           }, {
             title: 'Post with a Background Image',
-            href: 'http://shawnan.net'
+            href: '#/post/123'
           }, {
             title: 'Post with a Background Image',
-            href: 'http://shawnan.net'
+            href: '#/post/123'
           }, {
             title: 'Post with a Background Image',
-            href: 'http://shawnan.net'
+            href: '#/post/123'
           }
         ]
       }]

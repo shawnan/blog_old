@@ -42,20 +42,20 @@ export default {
         title: 'JavaScript',
         postList: [{
           title: 'Post with a Background Image',
-          href: 'http://shawnan.net'
+          href: '#/post/123'
         }, {
           title: 'Post with a Background Image',
-          href: 'http://shawnan.net'
+          href: '#/post/123'
         }]
       }, {
         type: 'tag',
         title: 'CSS',
         postList: [{
           title: 'CSS1',
-          href: 'http://shawnan.net'
+          href: '#/post/123'
         }, {
           title: 'CSS2',
-          href: 'http://shawnan.net'
+          href: '#/post/123'
         }]
       }]
     }

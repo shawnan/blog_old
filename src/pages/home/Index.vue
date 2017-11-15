@@ -1,7 +1,11 @@
 <template>
   <div id="root" class="root" :class="{feature: isHomePage}" @click="onDivClick($event)">
       <snav></snav>
-      <sheader></sheader>
+      <sheader
+        :isHomePage="isHomePage"
+        :title="title"
+        :subTitle="subTitle"
+      ></sheader>
       <div class="main">
         <router-view></router-view>
       </div>
@@ -23,12 +27,19 @@ export default {
     sfooter
   },
   data () {
-      return {
-          msg: 'Root',
-          isHomePage: true
-      }
+    return {
+      isHomePage: true,
+      title: '',
+      subTitle: 'HOME'
+    }
   },
   created () {
+    console.log(this.$route)
+    if (this.$route.name != 'Index'){
+      this.title = '123';
+      this.subTitle = '20171116';
+      this.isHomePage = false;
+    }
   },
   computed: mapState([
     'menuopen'

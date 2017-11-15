@@ -24,6 +24,10 @@ export default {
       type: Boolean,
       default: true
     },
+    title: {
+      type: String,
+      default: '天空之下'
+    },
     subTitle: {
       type: String,
       default: 'Home'
@@ -31,8 +35,7 @@ export default {
   },
   data () {
     return {
-      src: './static/images/abstract-5.jpg',
-      title: '天空之下'
+      src: './static/images/abstract-5.jpg'
     }
   },
   methods: {
