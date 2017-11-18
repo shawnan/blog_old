@@ -29,17 +29,12 @@ export default {
   data () {
     return {
       isHomePage: true,
-      title: '',
+      title: '天空之下',
       subTitle: 'HOME'
     }
   },
   created () {
-    console.log(this.$route)
-    if (this.$route.name != 'Index'){
-      this.title = '123';
-      this.subTitle = '20171116';
-      this.isHomePage = false;
-    }
+    
   },
   computed: mapState([
     'menuopen'
